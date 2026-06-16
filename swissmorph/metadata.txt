@@ -1,0 +1,39 @@
+[general]
+name=SwissMorph
+qgisMinimumVersion=3.20
+qgisMaximumVersion=4.99
+description=Downloads swissALTI3D DTM tiles and computes seven terrain morphometric layers for Switzerland
+version=0.1.0
+author=Nicolò Trojan
+email=t5ybnwvr8x@privaterelay.appleid.com
+
+about=SwissMorph is a QGIS 3 Processing plugin that automatically downloads
+    swissALTI3D 2 m or 0.5 m DTM tiles from the swisstopo STAC API and derives
+    seven morphometric layers in EPSG:2056 (CH1903+/LV95):
+    Slope, Plan curvature, Profile curvature, TWI, SPI, LS factor, TPI.
+    The area of interest can be defined by typing Swiss municipality names
+    (resolved via geo.admin.ch) or by drawing a rectangle on the map canvas.
+    Automatic symbology is applied when layers load into the project.
+    No external tools required -- pure Python + rasterio + numpy.
+
+tracker=https://github.com/ntrojan/swissmorph/issues
+repository=https://github.com/ntrojan/swissmorph
+homepage=https://github.com/ntrojan/swissmorph
+
+tags=dem,dtm,morphometry,terrain,swisstopo,swissalti3d,switzerland,slope,curvature,TWI,SPI,LS,TPI,hydrology,erosion,geomorphology
+
+category=Analysis
+icon=icon.png
+experimental=True
+deprecated=False
+server=False
+
+hasProcessingProvider=yes
+
+changelog=
+    0.1.0 (2026-06-16) - Initial release
+        Seven morphometric layers: slope, plan/profile curvature, TWI, SPI, LS factor, TPI
+        Municipality lookup via geo.admin.ch SearchServer (swissTLMRegio gg25)
+        DTM resolution choice: 2 m or 0.5 m
+        Automatic symbology on layer load
+        Standalone unit tests (no QGIS required)

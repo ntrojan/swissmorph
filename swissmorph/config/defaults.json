@@ -1,0 +1,16 @@
+{
+    "stac": {
+        "base_url": "https://data.geo.admin.ch/api/stac/v0.9",
+        "collection": "ch.swisstopo.swissalti3d",
+        "target_epsg": 2056,
+        "target_resolution_m": 2.0,
+        "items_limit": 100
+    },
+    "crs": {
+        "default": "EPSG:2056",
+        "stac_query": "EPSG:4326"
+    },
+    "cache": {
+        "dir_prefix": "swissmorph_"
+    }
+}
