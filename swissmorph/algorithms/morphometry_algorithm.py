@@ -5,8 +5,10 @@ downloads swissALTI3D via the STAC API, and computes slope, plan
 curvature and TWI using GDAL/numpy (no QGIS GUI imports in core/).
 """
 
+import os
 import tempfile
 
+from qgis.PyQt.QtGui import QIcon
 from qgis.core import (
     QgsCoordinateReferenceSystem,
     QgsCoordinateTransform,
@@ -206,6 +208,11 @@ class MorphometryAlgorithm(QgsProcessingAlgorithm):
 
     def groupId(self) -> str:
         return "morphometry"
+
+    def icon(self) -> QIcon:
+        return QIcon(
+            os.path.join(os.path.dirname(__file__), "..", "resources", "icon.png")
+        )
 
     def shortHelpString(self) -> str:
         return (

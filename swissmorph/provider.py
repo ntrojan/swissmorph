@@ -4,8 +4,13 @@ Registers all algorithms under the "SwissMorph" group in the
 Processing Toolbox.
 """
 
+import os
+
+from qgis.PyQt.QtGui import QIcon
 from qgis.core import QgsProcessingProvider
 from .algorithms.morphometry_algorithm import MorphometryAlgorithm
+
+_ICON_PATH = os.path.join(os.path.dirname(__file__), "resources", "icon.png")
 
 
 class SwissMorphProvider(QgsProcessingProvider):
@@ -14,6 +19,14 @@ class SwissMorphProvider(QgsProcessingProvider):
     def loadAlgorithms(self) -> None:
         """Register all algorithms exposed by this provider."""
         self.addAlgorithm(MorphometryAlgorithm())
+
+    def icon(self) -> QIcon:
+        """Icon shown next to the provider group in the Toolbox.
+
+        Returns:
+            QIcon: The SwissMorph icon.
+        """
+        return QIcon(_ICON_PATH)
 
     def id(self) -> str:
         """Unique provider identifier (lowercase, no spaces).
