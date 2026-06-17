@@ -1,1 +1,1 @@
-"""SwissMorph algorithms package."""
+"""SwissMorph Processing algorithms package."""

@@ -1,1 +1,1 @@
-"""SwissMorph core package - pure Python, no QGIS GUI imports."""
+"""SwissMorph core package — pure Python, no QGIS GUI imports."""

@@ -1,1 +1,0 @@
-"""SwissMorph test package."""

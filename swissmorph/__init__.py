@@ -1,4 +1,4 @@
-"""SwissMorph QGIS plugin - package entry point.
+"""SwissMorph QGIS plugin — package entry point.
 
 The top level of this package intentionally imports nothing from QGIS so
 that core/ can be imported and unit-tested without a running QGIS instance.
@@ -19,5 +19,5 @@ def classFactory(iface):
     Returns:
         SwissMorphPlugin: The plugin instance.
     """
-    from .plugin import SwissMorphPlugin   # deferred - needs qgis.core
+    from .plugin import SwissMorphPlugin   # deferred — needs qgis.core
     return SwissMorphPlugin(iface)

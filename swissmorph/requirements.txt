@@ -1,0 +1,12 @@
+# SwissMorph runtime dependencies (core/ — QGIS-agnostic).
+# In the OSGeo4W / QGIS Python shell: python -m pip install -r requirements.txt
+#
+# numpy and rasterio are bundled with most QGIS installs; pysheds is not and
+# must be installed separately.
+
+numpy
+rasterio
+# D8 flow direction / accumulation (C / numba-accelerated, scales to ~100M cells).
+# pysheds 0.5 references numpy.in1d (removed in NumPy 2.0); morphometry.py adds a
+# compatibility shim, so either NumPy 1.x or 2.x works.
+pysheds>=0.5
